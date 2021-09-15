@@ -1,0 +1,55 @@
+﻿<Window x:Class="SileoKonvertering.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SileoKonvertering"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="400">
+    <Grid Background="#FFD1D480">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Source="https://www.allabolag.se/bolagspresentation/?file=images/2021/8/16128c8fd51e23.jpg"
+            Grid.Column="1"
+            Grid.Row="1"
+               HorizontalAlignment="Center"
+        />
+        <TextBlock
+            TextWrapping="Wrap"
+            FontSize="13"
+            Padding="3"
+            Grid.Column="1"
+            Grid.Row="2"
+        >
+            The program lets you select a .txt-file with the information you wish to convert. The information in the file must be stored according to the expexted format. 
+            The program will create a new file of .csv-format with the information formatted as: 
+            <LineBreak/><Bold>SSN;Name;Address;ZipCode;City;Principal;Interest;Fees</Bold><LineBreak/>
+            and let you save it as the name of your choosing (or the default name "Konverterat") in the catalog of your choice. 
+            <LineBreak/>
+            <LineBreak/>
+            To begin, please click <Italic>Run program</Italic> below
+        </TextBlock>
+
+        <Button Command="{Binding OpenFileCommand}" 
+                Content="Run program" 
+                Height="50"
+                Width="200"
+                FontSize="25"
+                Grid.Column="1"
+                Grid.Row="2"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Center"
+        />
+        
+    </Grid>
+</Window>
